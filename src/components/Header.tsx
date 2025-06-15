@@ -57,31 +57,27 @@ const Header = () => {
                 <DropdownMenuItem asChild>
                   <Link to="#datasets" className="text-codjam-navy-600 hover:text-codjam-teal-500">Off-the-shelf Datasets</Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#datasets" className="text-codjam-navy-600 hover:text-codjam-teal-500">AI agents</Link>
+                </DropdownMenuItem>
+                                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger className="text-codjam-navy-600 hover:text-codjam-teal-500">
+                    Advanced AI Technologies
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuSubContent className="bg-white border shadow-lg">
+                    <DropdownMenuItem asChild>
+                      <Link to="#user-testing" className="text-codjam-navy-600 hover:text-codjam-teal-500">LLM & RLHF multillingual AI training and Localization </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="#surveys" className="text-codjam-navy-600 hover:text-codjam-teal-500">Generative AI & RLHF</Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
               </DropdownMenuContent>
             </DropdownMenu>
 
             {/* AI Agents - Standalone */}
-            <Link to="#ai-agents" className="text-codjam-navy-600 hover:text-codjam-teal-500 font-medium transition-colors duration-200 px-3 py-2">
-              AI Agents
-            </Link>
 
-            {/* Advanced AI Technologies Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="text-codjam-navy-600 hover:text-codjam-teal-500 font-medium flex items-center gap-1">
-                  Advanced AI Technologies
-                  <ChevronDown className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-80 bg-white border shadow-lg">
-                <DropdownMenuItem asChild>
-                  <Link to="#llm-rlhf" className="text-codjam-navy-600 hover:text-codjam-teal-500">LLM & RLHF (Multilingual AI Training and Localization)</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="#generative-ai" className="text-codjam-navy-600 hover:text-codjam-teal-500">Generative AI & RLHF</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
 
             {/* Knowledge Center Dropdown */}
             <DropdownMenu>
