@@ -1,21 +1,19 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Search, Globe } from 'lucide-react';
+import { 
+  DropdownMenu, 
+  DropdownMenuContent, 
+  DropdownMenuItem, 
+  DropdownMenuTrigger,
+  DropdownMenuSeparator,
+  DropdownMenuLabel
+} from '@/components/ui/dropdown-menu';
+import { Menu, X, Search, Globe, ChevronDown, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navigationItems = [
-    { name: 'AI Data Hub', href: '#data-hub' },
-    { name: 'Datasets', href: '#datasets' },
-    { name: 'Collecte de Données', href: '/collecte-de-donnees' },
-    { name: 'Annotation', href: '#annotation' },
-    { name: 'Recrutement', href: '#recruitment' },
-    { name: 'À propos', href: '#about' },
-    { name: 'Blog', href: '#blog' },
-  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
@@ -32,28 +30,134 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {navigationItems.map((item) => (
-              item.href.startsWith('/') ? (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="text-codjam-navy-600 hover:text-codjam-teal-500 font-medium transition-colors duration-200 relative group"
-                >
-                  {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-codjam-teal-500 transition-all duration-200 group-hover:w-full"></span>
-                </Link>
-              ) : (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-codjam-navy-600 hover:text-codjam-teal-500 font-medium transition-colors duration-200 relative group"
-                >
-                  {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-codjam-teal-500 transition-all duration-200 group-hover:w-full"></span>
-                </a>
-              )
-            ))}
+          <nav className="hidden lg:flex items-center space-x-1">
+            {/* Expertise Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="text-codjam-navy-600 hover:text-codjam-teal-500 font-medium flex items-center gap-1">
+                  Expertise
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-64 bg-white border shadow-lg">
+                <DropdownMenuItem asChild>
+                  <Link to="#ai-data-hub" className="text-codjam-navy-600 hover:text-codjam-teal-500">AI Data Hub</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#data-annotation" className="text-codjam-navy-600 hover:text-codjam-teal-500">Data Annotation</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/collecte-de-donnees" className="text-codjam-navy-600 hover:text-codjam-teal-500">Data Collection</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#trust-safety" className="text-codjam-navy-600 hover:text-codjam-teal-500">Trust & Safety</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#cx-management" className="text-codjam-navy-600 hover:text-codjam-teal-500">CX Management</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#user-testing" className="text-codjam-navy-600 hover:text-codjam-teal-500">User Testing</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#surveys" className="text-codjam-navy-600 hover:text-codjam-teal-500">Surveys</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#datasets" className="text-codjam-navy-600 hover:text-codjam-teal-500">Off-the-shelf Datasets</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#ai-agents" className="text-codjam-navy-600 hover:text-codjam-teal-500">AI Agents</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#advanced-ai" className="text-codjam-navy-600 hover:text-codjam-teal-500">Advanced AI Technologies</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#llm-rlhf" className="text-codjam-navy-600 hover:text-codjam-teal-500">LLM & RLHF</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#generative-ai" className="text-codjam-navy-600 hover:text-codjam-teal-500">Generative AI & RLHF</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Knowledge Center Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="text-codjam-navy-600 hover:text-codjam-teal-500 font-medium flex items-center gap-1">
+                  Knowledge Center
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 bg-white border shadow-lg">
+                <DropdownMenuLabel className="text-codjam-navy-700">Core Concepts</DropdownMenuLabel>
+                <DropdownMenuItem asChild>
+                  <Link to="#high-quality-data" className="text-codjam-navy-600 hover:text-codjam-teal-500">High Quality Data</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#nlp" className="text-codjam-navy-600 hover:text-codjam-teal-500">NLP</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#generative-ai-concepts" className="text-codjam-navy-600 hover:text-codjam-teal-500">Generative AI</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#computer-vision" className="text-codjam-navy-600 hover:text-codjam-teal-500">Computer Vision</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#multimodal-ai" className="text-codjam-navy-600 hover:text-codjam-teal-500">Multimodal AI</Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuLabel className="text-codjam-navy-700">Resources</DropdownMenuLabel>
+                <DropdownMenuItem asChild>
+                  <Link to="#training" className="text-codjam-navy-600 hover:text-codjam-teal-500">Training</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#blog" className="text-codjam-navy-600 hover:text-codjam-teal-500">Blog</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#case-studies" className="text-codjam-navy-600 hover:text-codjam-teal-500">Case Studies</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#sponsored-datasets" className="text-codjam-navy-600 hover:text-codjam-teal-500">Sponsored Datasets</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Company Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="text-codjam-navy-600 hover:text-codjam-teal-500 font-medium flex items-center gap-1">
+                  Company
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-48 bg-white border shadow-lg">
+                <DropdownMenuItem asChild>
+                  <Link to="#about" className="text-codjam-navy-600 hover:text-codjam-teal-500">About Us</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#news" className="text-codjam-navy-600 hover:text-codjam-teal-500">News</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#partners" className="text-codjam-navy-600 hover:text-codjam-teal-500">Partners</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#quality" className="text-codjam-navy-600 hover:text-codjam-teal-500">Quality</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Standalone Links */}
+            <Link to="#competition" className="text-codjam-navy-600 hover:text-codjam-teal-500 font-medium transition-colors duration-200 px-3 py-2">
+              Competition
+            </Link>
+            <Link to="#talent" className="text-codjam-navy-600 hover:text-codjam-teal-500 font-medium transition-colors duration-200 px-3 py-2">
+              Join Our Talent
+            </Link>
+            <Link to="#contact" className="text-codjam-navy-600 hover:text-codjam-teal-500 font-medium transition-colors duration-200 px-3 py-2">
+              Contact Us
+            </Link>
+            <Link to="#codjam-ai" className="text-codjam-navy-600 hover:text-codjam-teal-500 font-medium transition-colors duration-200 px-3 py-2">
+              CODJAM AI
+            </Link>
           </nav>
 
           {/* Desktop Actions */}
@@ -64,11 +168,8 @@ const Header = () => {
             <Button variant="ghost" size="icon" className="text-codjam-navy-600 hover:text-codjam-teal-500">
               <Globe className="h-5 w-5" />
             </Button>
-            <Button variant="outline" className="border-codjam-teal-500 text-codjam-teal-500 hover:bg-codjam-teal-50">
-              Connexion
-            </Button>
-            <Button className="bg-codjam-orange-500 hover:bg-codjam-orange-600 text-white">
-              Commencer
+            <Button variant="ghost" size="icon" className="text-codjam-navy-600 hover:text-codjam-teal-500">
+              <User className="h-5 w-5" />
             </Button>
           </div>
 
@@ -87,34 +188,27 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden border-t border-gray-200 bg-white">
             <nav className="py-4">
-              {navigationItems.map((item) => (
-                item.href.startsWith('/') ? (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="block px-4 py-3 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50 transition-colors duration-200"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ) : (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="block px-4 py-3 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50 transition-colors duration-200"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </a>
-                )
-              ))}
-              <div className="flex items-center space-x-3 px-4 pt-4 border-t border-gray-200 mt-4">
-                <Button variant="outline" className="flex-1 border-codjam-teal-500 text-codjam-teal-500">
-                  Connexion
-                </Button>
-                <Button className="flex-1 bg-codjam-orange-500 hover:bg-codjam-orange-600 text-white">
-                  Commencer
-                </Button>
+              {/* Mobile menu items */}
+              <div className="space-y-1">
+                <div className="px-4 py-2 text-sm font-semibold text-codjam-navy-700">Expertise</div>
+                <Link to="#ai-data-hub" className="block px-6 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>AI Data Hub</Link>
+                <Link to="/collecte-de-donnees" className="block px-6 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>Data Collection</Link>
+                <Link to="#data-annotation" className="block px-6 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>Data Annotation</Link>
+                
+                <div className="px-4 py-2 text-sm font-semibold text-codjam-navy-700 mt-4">Knowledge Center</div>
+                <Link to="#blog" className="block px-6 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+                <Link to="#case-studies" className="block px-6 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>Case Studies</Link>
+                
+                <div className="px-4 py-2 text-sm font-semibold text-codjam-navy-700 mt-4">Company</div>
+                <Link to="#about" className="block px-6 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>About Us</Link>
+                <Link to="#partners" className="block px-6 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>Partners</Link>
+                
+                <div className="border-t border-gray-200 mt-4 pt-4">
+                  <Link to="#competition" className="block px-4 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>Competition</Link>
+                  <Link to="#talent" className="block px-4 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>Join Our Talent</Link>
+                  <Link to="#contact" className="block px-4 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
+                  <Link to="#codjam-ai" className="block px-4 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>CODJAM AI</Link>
+                </div>
               </div>
             </nav>
           </div>
