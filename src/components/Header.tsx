@@ -11,7 +11,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img src="/lovable-uploads/81fed320-7eda-419c-a39c-42c56574bd1a.png" alt="CODJAM" className="h-10 w-auto lg:h-12" />
-            <span className="text-2xl font-bold text-codjam-navy-500 font-inter">user Name</span>
+            <span className="text-2xl font-bold text-codjam-navy-500 font-inter">CODJAM</span>
           </Link>
 
           {/* Desktop Navigation */}
