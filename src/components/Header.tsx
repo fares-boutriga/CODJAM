@@ -1,21 +1,17 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator, DropdownMenuLabel, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger } from '@/components/ui/dropdown-menu';
 import { Menu, X, Search, Globe, ChevronDown, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+  return <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img src="/lovable-uploads/81fed320-7eda-419c-a39c-42c56574bd1a.png" alt="CODJAM" className="h-10 w-auto lg:h-12" />
-            <span className="text-2xl font-bold text-codjam-navy-500 font-inter">CODJAM</span>
+            <span className="text-2xl font-bold text-codjam-navy-500 font-inter">user Name</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -42,11 +38,9 @@ const Header = () => {
                     </DropdownMenuItem>
                   </DropdownMenuSubContent>
                 </DropdownMenuSub>
-                
                 <DropdownMenuItem asChild>
                   <Link to="#trust-safety" className="text-codjam-navy-600 hover:text-codjam-teal-500">Trust & Safety</Link>
                 </DropdownMenuItem>
-                
                 <DropdownMenuSub>
                   <DropdownMenuSubTrigger className="text-codjam-navy-600 hover:text-codjam-teal-500">
                     CX Management
@@ -60,35 +54,30 @@ const Header = () => {
                     </DropdownMenuItem>
                   </DropdownMenuSubContent>
                 </DropdownMenuSub>
-                
                 <DropdownMenuItem asChild>
                   <Link to="#datasets" className="text-codjam-navy-600 hover:text-codjam-teal-500">Off-the-shelf Datasets</Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="#datasets" className="text-codjam-navy-600 hover:text-codjam-teal-500">AI agents</Link>
+                </DropdownMenuItem>
+                                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger className="text-codjam-navy-600 hover:text-codjam-teal-500">
+                    Advanced AI Technologies
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuSubContent className="bg-white border shadow-lg">
+                    <DropdownMenuItem asChild>
+                      <Link to="#user-testing" className="text-codjam-navy-600 hover:text-codjam-teal-500">LLM & RLHF multillingual AI training and Localization </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="#surveys" className="text-codjam-navy-600 hover:text-codjam-teal-500">Generative AI & RLHF</Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
               </DropdownMenuContent>
             </DropdownMenu>
 
             {/* AI Agents - Standalone */}
-            <Link to="#ai-agents" className="text-codjam-navy-600 hover:text-codjam-teal-500 font-medium transition-colors duration-200 px-3 py-2">
-              AI Agents
-            </Link>
 
-            {/* Advanced AI Technologies Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="text-codjam-navy-600 hover:text-codjam-teal-500 font-medium flex items-center gap-1">
-                  Advanced AI Technologies
-                  <ChevronDown className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-96 bg-white border shadow-lg">
-                <DropdownMenuItem asChild>
-                  <Link to="#llm-rlhf" className="text-codjam-navy-600 hover:text-codjam-teal-500">LLM & RLHF (Multilingual AI Training and Localization)</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="#generative-ai-rlhf" className="text-codjam-navy-600 hover:text-codjam-teal-500">Generative AI & RLHF</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
 
             {/* Knowledge Center Dropdown */}
             <DropdownMenu>
@@ -191,20 +180,15 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="lg:hidden text-codjam-navy-600" 
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
+          <Button variant="ghost" size="icon" className="lg:hidden text-codjam-navy-600" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200 bg-white">
+        {isMenuOpen && <div className="lg:hidden border-t border-gray-200 bg-white">
             <nav className="py-4">
+              {/* Mobile menu items */}
               <div className="space-y-1">
                 <div className="px-4 py-2 text-sm font-semibold text-codjam-navy-700">Expertise</div>
                 <Link to="#data-annotation" className="block px-6 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>Data Annotation</Link>
@@ -217,7 +201,7 @@ const Header = () => {
                 <div className="px-4 py-2 text-sm font-semibold text-codjam-navy-700 mt-4">AI Agents & Advanced Tech</div>
                 <Link to="#ai-agents" className="block px-6 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>AI Agents</Link>
                 <Link to="#llm-rlhf" className="block px-6 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>LLM & RLHF</Link>
-                <Link to="#generative-ai-rlhf" className="block px-6 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>Generative AI & RLHF</Link>
+                <Link to="#generative-ai" className="block px-6 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>Generative AI & RLHF</Link>
                 
                 <div className="px-4 py-2 text-sm font-semibold text-codjam-navy-700 mt-4">Knowledge Center</div>
                 <Link to="#high-quality-data" className="block px-6 py-2 text-codjam-navy-600 hover:text-codjam-teal-500 hover:bg-codjam-teal-50" onClick={() => setIsMenuOpen(false)}>High Quality Data</Link>
@@ -239,11 +223,8 @@ const Header = () => {
                 </div>
               </div>
             </nav>
-          </div>
-        )}
+          </div>}
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
