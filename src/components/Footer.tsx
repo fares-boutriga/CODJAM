@@ -37,29 +37,49 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-background border-t">
-      <div className="container mx-auto px-4 py-12">
-        {/* Main Footer Grid - 8 rows × 10 columns */}
-        <div className="grid grid-cols-10 gap-4 mb-8">
-          {/* Row 1 - Logo */}
-          <div className="col-span-1 row-span-8 flex flex-col">
-            <div className="flex items-center space-x-2 mb-4">
+    <footer className="bg-codjam-navy-500 text-white">
+      <div className="container mx-auto px-6 py-16">
+        {/* Main Footer Grid - Enhanced Design */}
+        <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 mb-12">
+          {/* Column 1 - Logo & Company Info */}
+          <div className="lg:col-span-2 space-y-6">
+            <div className="flex items-center space-x-3">
               <img 
                 src="/lovable-uploads/81fed320-7eda-419c-a39c-42c56574bd1a.png" 
                 alt="CODJAM" 
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
-              <span className="text-lg font-bold">CODJAM</span>
+              <span className="text-2xl font-bold">CODJAM</span>
+            </div>
+            <p className="text-gray-300 text-sm leading-relaxed max-w-sm">
+              Leading AI data platform for high-quality training datasets, annotation services, and advanced AI technologies.
+            </p>
+            <div className="flex space-x-4">
+              <Button variant="ghost" size="icon" className="text-gray-300 hover:text-white hover:bg-codjam-teal-500 transition-all duration-200">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </Button>
+              <Button variant="ghost" size="icon" className="text-gray-300 hover:text-white hover:bg-codjam-teal-500 transition-all duration-200">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </Button>
+              <Button variant="ghost" size="icon" className="text-gray-300 hover:text-white hover:bg-codjam-teal-500 transition-all duration-200">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                </svg>
+              </Button>
             </div>
           </div>
 
           {/* Column 2 - Off-the-Shelf Datasets */}
-          <div className="col-span-1">
-            <h3 className="font-semibold mb-3 text-sm">{footerData.row1.datasets.title}</h3>
-            <ul className="space-y-2">
+          <div className="lg:col-span-1">
+            <h3 className="font-semibold mb-4 text-white text-sm border-b border-gray-600 pb-2">{footerData.row1.datasets.title}</h3>
+            <ul className="space-y-3">
               {footerData.row1.datasets.links.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                  <a href="#" className="text-xs text-gray-300 hover:text-codjam-teal-400 transition-colors duration-200 block leading-relaxed">
                     {link}
                   </a>
                 </li>
@@ -68,12 +88,12 @@ const Footer = () => {
           </div>
 
           {/* Column 3 - Data Collection */}
-          <div className="col-span-1">
-            <h3 className="font-semibold mb-3 text-sm">{footerData.row1.collection.title}</h3>
-            <ul className="space-y-2">
+          <div className="lg:col-span-1">
+            <h3 className="font-semibold mb-4 text-white text-sm border-b border-gray-600 pb-2">{footerData.row1.collection.title}</h3>
+            <ul className="space-y-3">
               {footerData.row1.collection.links.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                  <a href="#" className="text-xs text-gray-300 hover:text-codjam-teal-400 transition-colors duration-200 block leading-relaxed">
                     {link}
                   </a>
                 </li>
@@ -82,12 +102,12 @@ const Footer = () => {
           </div>
 
           {/* Column 4 - Data Annotation */}
-          <div className="col-span-1">
-            <h3 className="font-semibold mb-3 text-sm">{footerData.row1.annotation.title}</h3>
-            <ul className="space-y-2">
+          <div className="lg:col-span-1">
+            <h3 className="font-semibold mb-4 text-white text-sm border-b border-gray-600 pb-2">{footerData.row1.annotation.title}</h3>
+            <ul className="space-y-3">
               {footerData.row1.annotation.links.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                  <a href="#" className="text-xs text-gray-300 hover:text-codjam-teal-400 transition-colors duration-200 block leading-relaxed">
                     {link}
                   </a>
                 </li>
@@ -96,12 +116,12 @@ const Footer = () => {
           </div>
 
           {/* Column 5 - Computer Vision */}
-          <div className="col-span-1">
-            <h3 className="font-semibold mb-3 text-sm">{footerData.row1.vision.title}</h3>
-            <ul className="space-y-2">
+          <div className="lg:col-span-1">
+            <h3 className="font-semibold mb-4 text-white text-sm border-b border-gray-600 pb-2">{footerData.row1.vision.title}</h3>
+            <ul className="space-y-3">
               {footerData.row1.vision.links.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                  <a href="#" className="text-xs text-gray-300 hover:text-codjam-teal-400 transition-colors duration-200 block leading-relaxed">
                     {link}
                   </a>
                 </li>
@@ -110,12 +130,12 @@ const Footer = () => {
           </div>
 
           {/* Column 6 - Case Studies */}
-          <div className="col-span-1">
-            <h3 className="font-semibold mb-3 text-sm">{footerData.row1.resources.title}</h3>
-            <ul className="space-y-2">
+          <div className="lg:col-span-1">
+            <h3 className="font-semibold mb-4 text-white text-sm border-b border-gray-600 pb-2">{footerData.row1.resources.title}</h3>
+            <ul className="space-y-3">
               {footerData.row1.resources.links.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                  <a href="#" className="text-xs text-gray-300 hover:text-codjam-teal-400 transition-colors duration-200 block leading-relaxed">
                     {link}
                   </a>
                 </li>
@@ -124,12 +144,12 @@ const Footer = () => {
           </div>
 
           {/* Column 7 - About Us */}
-          <div className="col-span-1">
-            <h3 className="font-semibold mb-3 text-sm">{footerData.row1.company.title}</h3>
-            <ul className="space-y-2">
+          <div className="lg:col-span-1">
+            <h3 className="font-semibold mb-4 text-white text-sm border-b border-gray-600 pb-2">{footerData.row1.company.title}</h3>
+            <ul className="space-y-3">
               {footerData.row1.company.links.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                  <a href="#" className="text-xs text-gray-300 hover:text-codjam-teal-400 transition-colors duration-200 block leading-relaxed">
                     {link}
                   </a>
                 </li>
@@ -138,54 +158,26 @@ const Footer = () => {
           </div>
 
           {/* Column 8 - CODJAM AI */}
-          <div className="col-span-1">
-            <h3 className="font-semibold mb-3 text-sm">{footerData.row1.codjam.title}</h3>
+          <div className="lg:col-span-1">
+            <h3 className="font-semibold mb-4 text-white text-sm border-b border-gray-600 pb-2">{footerData.row1.codjam.title}</h3>
+            <p className="text-xs text-gray-300 leading-relaxed">
+              Explore AI challenges, competitions, and community events.
+            </p>
           </div>
-
-          {/* Columns 9-10 - Empty for spacing */}
-          <div className="col-span-2"></div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t pt-6">
-          <div className="grid grid-cols-10 gap-4 items-center">
-            <div className="col-span-1 text-xs text-muted-foreground">
+        <div className="border-t border-gray-600 pt-8">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-4 lg:space-y-0">
+            <div className="text-xs text-gray-300">
               © 2024 Appen Limited. All rights reserved.
             </div>
-            <div className="col-span-1">
-              <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">Legal</a>
+            <div className="flex flex-wrap gap-6 text-xs">
+              <a href="#" className="text-gray-300 hover:text-codjam-teal-400 transition-colors duration-200">Legal</a>
+              <a href="#" className="text-gray-300 hover:text-codjam-teal-400 transition-colors duration-200">Privacy Statement</a>
+              <a href="#" className="text-gray-300 hover:text-codjam-teal-400 transition-colors duration-200">Manage My Data</a>
+              <a href="#" className="text-gray-300 hover:text-codjam-teal-400 transition-colors duration-200">Cookies Settings</a>
             </div>
-            <div className="col-span-1">
-              <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">Privacy Statement</a>
-            </div>
-            <div className="col-span-1">
-              <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">Manage My Data</a>
-            </div>
-            <div className="col-span-1">
-              <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">Cookies Settings</a>
-            </div>
-            <div className="col-span-1 flex space-x-2">
-              <Button variant="ghost" size="icon" className="h-6 w-6">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </Button>
-            </div>
-            <div className="col-span-1 flex space-x-2">
-              <Button variant="ghost" size="icon" className="h-6 w-6">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-              </Button>
-            </div>
-            <div className="col-span-1 flex space-x-2">
-              <Button variant="ghost" size="icon" className="h-6 w-6">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                </svg>
-              </Button>
-            </div>
-            <div className="col-span-1"></div>
           </div>
         </div>
       </div>
