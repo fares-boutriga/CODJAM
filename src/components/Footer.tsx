@@ -1,106 +1,191 @@
 
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
 
 const Footer = () => {
-  const footerSections = [
-    {
-      title: "Produits",
-      links: ["AI Data Hub", "Datasets", "Annotation", "API", "Consulting"]
-    },
-    {
-      title: "Solutions",
-      links: ["Computer Vision", "NLP", "Audio Processing", "Multimodal AI", "Custom Datasets"]
-    },
-    {
-      title: "Ressources",
-      links: ["Documentation", "Blog", "Études de cas", "Glossaire IA", "Support"]
-    },
-    {
-      title: "Entreprise",
-      links: ["À propos", "Carrières", "Partenaires", "Contact", "Presse"]
+  const footerData = {
+    // Row 1
+    row1: {
+      datasets: {
+        title: "Off-the-Shelf Datasets",
+        links: ["All Categories Datasets", "LLM Datasets", "Computer Vision Datasets", "Automatic Speech Recognition", "Text-to-Speech Synthesis Datasets", "Pronunciation Dictionary", "NLU Datasets", "OCR Datasets"]
+      },
+      collection: {
+        title: "Data Collection", 
+        links: ["Text Data Collection", "Audio Data Collection", "Image Data Collection", "Video Data Collection", "CX Management", "User Testing", "Survey"]
+      },
+      annotation: {
+        title: "Data Annotation",
+        links: ["Optical Character Recognition (OCR) Transcription", "Automatic Speech Recognition", "Text-to-Speech Synthesis", "Machine Translation Post-Editing", "Search Engine Results Page Evaluation / Content Moderation", "Ads Evaluation", "Sentiment / Intent Analysis", "Text Classification / Text Auto-Correction"]
+      },
+      vision: {
+        title: "Computer Vision",
+        links: ["3D Point Cloud Data", "Street View Data", "Identity Recognition Data", "Behavior Recognition Data", "Multimodal Data"]
+      },
+      resources: {
+        title: "Case Studies",
+        links: ["Blog", "Press Room", "AI Glossary", "Join Our Talent Network", "FAQ"]
+      },
+      company: {
+        title: "About Us", 
+        links: ["Contact", "Sponsored Datasets", "Partners", "Investor Relations", "Careers"]
+      },
+      codjam: {
+        title: "CODJAM AI",
+        links: []
+      }
     }
-  ];
+  };
 
   return (
-    <footer className="bg-codjam-navy-500 text-white">
-      <div className="container mx-auto px-4 pt-16 pb-8">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
-          {/* Company Info */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
+    <footer className="bg-background border-t">
+      <div className="container mx-auto px-4 py-12">
+        {/* Main Footer Grid - 8 rows × 10 columns */}
+        <div className="grid grid-cols-10 gap-4 mb-8">
+          {/* Row 1 - Logo */}
+          <div className="col-span-1 row-span-8 flex flex-col">
+            <div className="flex items-center space-x-2 mb-4">
               <img 
                 src="/lovable-uploads/81fed320-7eda-419c-a39c-42c56574bd1a.png" 
                 alt="CODJAM" 
-                className="h-10 w-auto"
+                className="h-8 w-auto"
               />
-              <span className="text-2xl font-bold">CODJAM</span>
+              <span className="text-lg font-bold">CODJAM</span>
             </div>
-            <p className="text-gray-300 mb-6 max-w-md">
-              Plateforme spécialisée dans la collecte, l'annotation et la gestion 
-              de données IA de haute qualité pour l'entraînement de modèles 
-              d'intelligence artificielle.
-            </p>
-            <div className="flex space-x-4">
-              <Button variant="ghost" size="icon" className="text-gray-300 hover:text-white hover:bg-codjam-teal-500">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                </svg>
-              </Button>
-              <Button variant="ghost" size="icon" className="text-gray-300 hover:text-white hover:bg-codjam-teal-500">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          </div>
+
+          {/* Column 2 - Off-the-Shelf Datasets */}
+          <div className="col-span-1">
+            <h3 className="font-semibold mb-3 text-sm">{footerData.row1.datasets.title}</h3>
+            <ul className="space-y-2">
+              {footerData.row1.datasets.links.map((link, index) => (
+                <li key={index}>
+                  <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3 - Data Collection */}
+          <div className="col-span-1">
+            <h3 className="font-semibold mb-3 text-sm">{footerData.row1.collection.title}</h3>
+            <ul className="space-y-2">
+              {footerData.row1.collection.links.map((link, index) => (
+                <li key={index}>
+                  <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4 - Data Annotation */}
+          <div className="col-span-1">
+            <h3 className="font-semibold mb-3 text-sm">{footerData.row1.annotation.title}</h3>
+            <ul className="space-y-2">
+              {footerData.row1.annotation.links.map((link, index) => (
+                <li key={index}>
+                  <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 5 - Computer Vision */}
+          <div className="col-span-1">
+            <h3 className="font-semibold mb-3 text-sm">{footerData.row1.vision.title}</h3>
+            <ul className="space-y-2">
+              {footerData.row1.vision.links.map((link, index) => (
+                <li key={index}>
+                  <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 6 - Case Studies */}
+          <div className="col-span-1">
+            <h3 className="font-semibold mb-3 text-sm">{footerData.row1.resources.title}</h3>
+            <ul className="space-y-2">
+              {footerData.row1.resources.links.map((link, index) => (
+                <li key={index}>
+                  <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 7 - About Us */}
+          <div className="col-span-1">
+            <h3 className="font-semibold mb-3 text-sm">{footerData.row1.company.title}</h3>
+            <ul className="space-y-2">
+              {footerData.row1.company.links.map((link, index) => (
+                <li key={index}>
+                  <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 8 - CODJAM AI */}
+          <div className="col-span-1">
+            <h3 className="font-semibold mb-3 text-sm">{footerData.row1.codjam.title}</h3>
+          </div>
+
+          {/* Columns 9-10 - Empty for spacing */}
+          <div className="col-span-2"></div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t pt-6">
+          <div className="grid grid-cols-10 gap-4 items-center">
+            <div className="col-span-1 text-xs text-muted-foreground">
+              © 2024 Appen Limited. All rights reserved.
+            </div>
+            <div className="col-span-1">
+              <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">Legal</a>
+            </div>
+            <div className="col-span-1">
+              <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">Privacy Statement</a>
+            </div>
+            <div className="col-span-1">
+              <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">Manage My Data</a>
+            </div>
+            <div className="col-span-1">
+              <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">Cookies Settings</a>
+            </div>
+            <div className="col-span-1 flex space-x-2">
+              <Button variant="ghost" size="icon" className="h-6 w-6">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
               </Button>
-              <Button variant="ghost" size="icon" className="text-gray-300 hover:text-white hover:bg-codjam-teal-500">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.346-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.162-1.499-.69-2.436-2.878-2.436-4.632 0-3.78 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.750-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+            </div>
+            <div className="col-span-1 flex space-x-2">
+              <Button variant="ghost" size="icon" className="h-6 w-6">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
               </Button>
             </div>
-          </div>
-
-          {/* Footer Links */}
-          {footerSections.map((section, index) => (
-            <div key={index}>
-              <h3 className="font-semibold text-white mb-4">{section.title}</h3>
-              <ul className="space-y-2">
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a 
-                      href="#" 
-                      className="text-gray-300 hover:text-codjam-teal-400 transition-colors duration-200"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            <div className="col-span-1 flex space-x-2">
+              <Button variant="ghost" size="icon" className="h-6 w-6">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                </svg>
+              </Button>
             </div>
-          ))}
-        </div>
-
-        <Separator className="bg-gray-600 mb-8" />
-
-        {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div className="text-gray-300 text-sm">
-            © 2024 CODJAM. Tous droits réservés.
-          </div>
-          <div className="flex space-x-6 text-sm">
-            <a href="#" className="text-gray-300 hover:text-codjam-teal-400 transition-colors">
-              Politique de confidentialité
-            </a>
-            <a href="#" className="text-gray-300 hover:text-codjam-teal-400 transition-colors">
-              Conditions d'utilisation
-            </a>
-            <a href="#" className="text-gray-300 hover:text-codjam-teal-400 transition-colors">
-              RGPD
-            </a>
-            <a href="#" className="text-gray-300 hover:text-codjam-teal-400 transition-colors">
-              Cookies
-            </a>
+            <div className="col-span-1"></div>
           </div>
         </div>
       </div>
