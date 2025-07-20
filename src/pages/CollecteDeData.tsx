@@ -443,8 +443,7 @@ const CollecteDeData = () => {
               📩 Besoin de données fiables et contextualisées ?
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Démarrons ensemble votre projet de collecte de données africaines. 
-              Nos experts vous accompagnent de l'analyse des besoins à la livraison finale.
+              Grâce à notre solide expérience et à notre ancrage en Afrique, nous vous accompagnons dans la collecte de données pour l'intelligence artificielle, la recherche ou l'innovation. Nous construisons, avec vous, des jeux de données de qualité, adaptés à vos besoins et enracinés dans les réalités du continent. Parlons de votre projet et avançons ensemble vers des solutions utiles, locales et ambitieuses.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-white text-codjam-orange-500 hover:bg-gray-50 px-8 py-4 text-lg">
