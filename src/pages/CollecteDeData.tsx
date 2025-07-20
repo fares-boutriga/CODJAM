@@ -25,35 +25,35 @@ const CollecteDeData = () => {
     company: "Université de Dakar"
   }];
   const faqItems = [{
-    question: "Pourquoi choisir Codjam ?",
-    answer: "Notre expertise locale combinée à une technologie avancée nous permet de fournir des données authentiques et contextualisées spécifiques au continent africain."
+    question: "Pourquoi choisir Codjam pour la collecte de données ?",
+    answer: "Chez Codjam, nous nous engageons à fournir des données fiables, authentiques et adaptées à vos besoins. Notre expertise locale, l'utilisation de technologies avancées et notre approche personnalisée garantissent une collecte de données de haute qualité. Nous nous assurons que les données collectées sont représentatives des réalités africaines, tout en respectant les normes éthiques internationales."
   }, {
     question: "Quels types de données collectez-vous ?",
-    answer: "Nous collectons des données textuelles, audio, visuelles et vidéo dans plus de 50 langues africaines, couvrant divers domaines culturels et techniques."
+    answer: "Nous proposons plusieurs types de données, chacune collectée selon des standards stricts pour garantir leur qualité et pertinence. Voici les principaux types : • Données textuelles : Langues locales comme le Swahili, le Haoussa, le Zoulou, l'Arabe africain. • Données audio : Discussions, interviews, discours dans des contextes réels. • Données visuelles (images) : Captures d'images pour des applications variées telles que la reconnaissance faciale ou la réalité virtuelle. • Données vidéo : Captation de scènes quotidiennes ou d'événements culturels pour des applications comme la reconnaissance d'actions."
   }, {
-    question: "Quel est le processus ?",
-    answer: "Notre processus en 4 étapes : identification des besoins, collecte sur le terrain, traitement et annotation, puis livraison sécurisée."
+    question: "Quel est le processus de collecte des données ?",
+    answer: "Notre processus est rigoureux et structuré, comprenant les étapes suivantes : • Identification des besoins : Nous travaillons avec vous pour définir les objectifs et les spécifications des données. • Collecte sur le terrain : Notre équipe locale collecte des données directement sur le terrain. • Traitement et annotation : Les données sont ensuite traitées et annotées pour assurer leur précision et pertinence. • Livraison : Nous vous fournissons les données collectées, prêtes à être intégrées dans vos projets."
   }, {
-    question: "Comment garantissez-vous la qualité des données ?",
-    answer: "Nous appliquons des protocoles rigoureux de validation, avec double vérification par nos experts locaux et contrôle qualité automatisé."
+    question: "Comment garantissez-vous la qualité des données collectées ?",
+    answer: "Nous utilisons des outils de collecte avancés, tout en respectant des standards éthiques et qualitatifs stricts. Notre équipe de terrain, composée de professionnels locaux, connaît les spécificités culturelles, linguistiques et sociales des communautés, ce qui garantit une collecte authentique et précise."
   }, {
-    question: "Quelles sont les applications des données ?",
-    answer: "NLP, vision par ordinateur, santé, marketing, éducation, sciences sociales, préservation du patrimoine culturel et bien plus."
+    question: "Quelles sont les applications des données collectées ?",
+    answer: "Les données collectées par Codjam sont adaptées à une large gamme d'applications, notamment : • Intelligence Artificielle (IA) : Formation de modèles IA pour la reconnaissance vocale, la vision par ordinateur, etc. • Recherche : Collecte de données pour des projets en sciences sociales, santé publique, marketing, et plus. • Éducation : Création de ressources pédagogiques adaptées aux réalités locales. • Technologies émergentes : Utilisation dans des domaines comme la réalité virtuelle, les jeux vidéo et la reconnaissance faciale."
   }, {
-    question: "Comment représentez-vous la diversité africaine ?",
-    answer: "Nous travaillons avec des collecteurs locaux dans 15 pays africains pour assurer une représentation authentique et équitable."
+    question: "Comment vos données reflètent-elles la diversité culturelle de l'Afrique ?",
+    answer: "Nous comprenons l'importance de refléter la richesse linguistique et culturelle de l'Afrique dans nos données. Nos équipes de collecte travaillent dans diverses régions et communautés, capturant des données qui respectent et représentent les spécificités locales. Que ce soit dans les langues, les accents, les comportements ou les traditions, nous veillons à garantir une couverture authentique et fidèle."
   }, {
-    question: "Comment démarrer un projet ?",
-    answer: "Contactez-nous pour un audit gratuit de vos besoins. Nous proposons ensuite un devis personnalisé sous 48h."
+    question: "Comment puis-je commencer la collecte de données avec Codjam ?",
+    answer: "C'est simple ! Il vous suffit de nous contacter via le formulaire sur notre site ou de discuter de votre projet avec l'un de nos experts. Nous travaillerons avec vous pour comprendre vos besoins spécifiques et lancer la collecte de données sur mesure."
   }, {
-    question: "Quelles zones géographiques couvrez-vous ?",
-    answer: "Afrique de l'Ouest, Centrale, de l'Est et du Nord, avec une expertise particulière dans les régions francophones et anglophones."
+    question: "Est-ce que Codjam prend en charge la collecte de données dans toute l'Afrique ?",
+    answer: "Oui, nous opérons à travers tout le continent africain, de manière flexible et adaptée à chaque environnement, qu'il soit urbain ou rural. Nos équipes locales connaissent parfaitement les contextes géographiques et culturels, ce qui garantit une collecte pertinente et efficace."
   }, {
-    question: "Où obtenir plus d'informations ?",
-    answer: "Téléchargez notre brochure complète ou contactez directement nos experts pour une consultation personnalisée."
+    question: "Comment puis-je obtenir plus d'informations sur vos services ?",
+    answer: "Vous pouvez consulter notre brochure PDF ou demander un rendez-vous pour discuter plus en détail de vos besoins spécifiques. Nous sommes là pour vous accompagner dans la collecte de données adaptées à vos projets."
   }, {
-    question: "Proposez-vous des services personnalisés ?",
-    answer: "Oui, chaque projet est unique. Nous adaptons nos méthodes de collecte selon vos besoins spécifiques et votre secteur d'activité."
+    question: "Est-ce que vous proposez des services personnalisés pour des projets spécifiques ?",
+    answer: "Absolument ! Chez Codjam, chaque projet est unique, c'est pourquoi nous offrons des services personnalisés. Nous adaptons la collecte de données à vos objectifs spécifiques, qu'il s'agisse d'un projet en IA, en recherche, ou pour d'autres secteurs."
   }];
   const nextTestimonial = () => {
     setCurrentTestimonial(prev => (prev + 1) % testimonials.length);
@@ -410,31 +410,6 @@ const CollecteDeData = () => {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-codjam-navy-500 mb-4">
-              ❓ Questions Fréquentes
-            </h2>
-          </div>
-          
-          <div className="max-w-3xl mx-auto space-y-4">
-            {faqItems.map((item, index) => <Card key={index} className="border-codjam-teal-200">
-                <CardHeader className="cursor-pointer" onClick={() => setShowFAQ(showFAQ === index ? null : index)}>
-                  <div className="flex justify-between items-center">
-                    <CardTitle className="text-codjam-navy-500 text-lg">{item.question}</CardTitle>
-                    <ChevronRight className={`w-5 h-5 text-codjam-teal-500 transition-transform ${showFAQ === index ? 'rotate-90' : ''}`} />
-                  </div>
-                </CardHeader>
-                {showFAQ === index && <CardContent>
-                    <p className="text-codjam-navy-400">{item.answer}</p>
-                  </CardContent>}
-              </Card>)}
-          </div>
-        </div>
-      </section>
-
       {/* Section finale : Démarrage */}
       <section className="py-16 bg-gradient-to-br from-codjam-orange-500 to-codjam-teal-500">
         <div className="container mx-auto px-4">
@@ -453,6 +428,43 @@ const CollecteDeData = () => {
                 Join our Talent
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-codjam-navy-500 mb-4">
+              ❓FAQ - Collecte de Données avec Codjam
+            </h2>
+          </div>
+          
+          <div className="max-w-3xl mx-auto space-y-4">
+            {faqItems.map((item, index) => <Card key={index} className="border-codjam-teal-200">
+                <CardHeader className="cursor-pointer" onClick={() => setShowFAQ(showFAQ === index ? null : index)}>
+                  <div className="flex justify-between items-center">
+                    <CardTitle className="text-codjam-navy-500 text-lg">{item.question}</CardTitle>
+                    <ChevronRight className={`w-5 h-5 text-codjam-teal-500 transition-transform ${showFAQ === index ? 'rotate-90' : ''}`} />
+                  </div>
+                </CardHeader>
+                {showFAQ === index && <CardContent>
+                    <p className="text-codjam-navy-400 whitespace-pre-line">{item.answer}</p>
+                  </CardContent>}
+              </Card>)}
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-lg text-codjam-navy-500 font-semibold mb-4">
+              Vous avez d'autres questions ?
+            </p>
+            <p className="text-codjam-navy-400 mb-6">
+              📩 Discutons ensemble de votre projet ! N'hésitez pas à nous contacter pour toute demande ou pour démarrer votre collecte de données
+            </p>
+            <Button size="lg" className="bg-codjam-orange-500 hover:bg-codjam-orange-600 text-white px-8 py-4">
+              Contactez-nous
+            </Button>
           </div>
         </div>
       </section>
