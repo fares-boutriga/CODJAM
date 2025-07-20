@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,103 +5,63 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { 
-  Brain, 
-  Target, 
-  Settings, 
-  FileText, 
-  Headphones, 
-  Image, 
-  Video,
-  Search,
-  CheckCircle,
-  Users,
-  Globe,
-  MessageSquare,
-  ChevronLeft,
-  ChevronRight,
-  Download,
-  Mail,
-  Phone
-} from 'lucide-react';
+import { Brain, Target, Settings, FileText, Headphones, Image, Video, Search, CheckCircle, Users, Globe, MessageSquare, ChevronLeft, ChevronRight, Download, Mail, Phone } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-
 const CollecteDeData = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [showFAQ, setShowFAQ] = useState<number | null>(null);
-
-  const testimonials = [
-    {
-      text: "Codjam a transformé notre projet IA grâce à des données africaines authentiques et de haute qualité.",
-      author: "Dr. Sarah Mensah",
-      company: "Tech4Africa Institute"
-    },
-    {
-      text: "Un partenaire de confiance qui comprend les nuances culturelles et linguistiques de nos besoins.",
-      author: "Jean-Baptiste Kone",
-      company: "StartupAI Mali"
-    },
-    {
-      text: "La précision et la contextualisation des données collectées ont dépassé nos attentes.",
-      author: "Prof. Aminata Diallo",
-      company: "Université de Dakar"
-    }
-  ];
-
-  const faqItems = [
-    {
-      question: "Pourquoi choisir Codjam ?",
-      answer: "Notre expertise locale combinée à une technologie avancée nous permet de fournir des données authentiques et contextualisées spécifiques au continent africain."
-    },
-    {
-      question: "Quels types de données collectez-vous ?",
-      answer: "Nous collectons des données textuelles, audio, visuelles et vidéo dans plus de 50 langues africaines, couvrant divers domaines culturels et techniques."
-    },
-    {
-      question: "Quel est le processus ?",
-      answer: "Notre processus en 4 étapes : identification des besoins, collecte sur le terrain, traitement et annotation, puis livraison sécurisée."
-    },
-    {
-      question: "Comment garantissez-vous la qualité des données ?",
-      answer: "Nous appliquons des protocoles rigoureux de validation, avec double vérification par nos experts locaux et contrôle qualité automatisé."
-    },
-    {
-      question: "Quelles sont les applications des données ?",
-      answer: "NLP, vision par ordinateur, santé, marketing, éducation, sciences sociales, préservation du patrimoine culturel et bien plus."
-    },
-    {
-      question: "Comment représentez-vous la diversité africaine ?",
-      answer: "Nous travaillons avec des collecteurs locaux dans 15 pays africains pour assurer une représentation authentique et équitable."
-    },
-    {
-      question: "Comment démarrer un projet ?",
-      answer: "Contactez-nous pour un audit gratuit de vos besoins. Nous proposons ensuite un devis personnalisé sous 48h."
-    },
-    {
-      question: "Quelles zones géographiques couvrez-vous ?",
-      answer: "Afrique de l'Ouest, Centrale, de l'Est et du Nord, avec une expertise particulière dans les régions francophones et anglophones."
-    },
-    {
-      question: "Où obtenir plus d'informations ?",
-      answer: "Téléchargez notre brochure complète ou contactez directement nos experts pour une consultation personnalisée."
-    },
-    {
-      question: "Proposez-vous des services personnalisés ?",
-      answer: "Oui, chaque projet est unique. Nous adaptons nos méthodes de collecte selon vos besoins spécifiques et votre secteur d'activité."
-    }
-  ];
-
+  const testimonials = [{
+    text: "Codjam a transformé notre projet IA grâce à des données africaines authentiques et de haute qualité.",
+    author: "Dr. Sarah Mensah",
+    company: "Tech4Africa Institute"
+  }, {
+    text: "Un partenaire de confiance qui comprend les nuances culturelles et linguistiques de nos besoins.",
+    author: "Jean-Baptiste Kone",
+    company: "StartupAI Mali"
+  }, {
+    text: "La précision et la contextualisation des données collectées ont dépassé nos attentes.",
+    author: "Prof. Aminata Diallo",
+    company: "Université de Dakar"
+  }];
+  const faqItems = [{
+    question: "Pourquoi choisir Codjam ?",
+    answer: "Notre expertise locale combinée à une technologie avancée nous permet de fournir des données authentiques et contextualisées spécifiques au continent africain."
+  }, {
+    question: "Quels types de données collectez-vous ?",
+    answer: "Nous collectons des données textuelles, audio, visuelles et vidéo dans plus de 50 langues africaines, couvrant divers domaines culturels et techniques."
+  }, {
+    question: "Quel est le processus ?",
+    answer: "Notre processus en 4 étapes : identification des besoins, collecte sur le terrain, traitement et annotation, puis livraison sécurisée."
+  }, {
+    question: "Comment garantissez-vous la qualité des données ?",
+    answer: "Nous appliquons des protocoles rigoureux de validation, avec double vérification par nos experts locaux et contrôle qualité automatisé."
+  }, {
+    question: "Quelles sont les applications des données ?",
+    answer: "NLP, vision par ordinateur, santé, marketing, éducation, sciences sociales, préservation du patrimoine culturel et bien plus."
+  }, {
+    question: "Comment représentez-vous la diversité africaine ?",
+    answer: "Nous travaillons avec des collecteurs locaux dans 15 pays africains pour assurer une représentation authentique et équitable."
+  }, {
+    question: "Comment démarrer un projet ?",
+    answer: "Contactez-nous pour un audit gratuit de vos besoins. Nous proposons ensuite un devis personnalisé sous 48h."
+  }, {
+    question: "Quelles zones géographiques couvrez-vous ?",
+    answer: "Afrique de l'Ouest, Centrale, de l'Est et du Nord, avec une expertise particulière dans les régions francophones et anglophones."
+  }, {
+    question: "Où obtenir plus d'informations ?",
+    answer: "Téléchargez notre brochure complète ou contactez directement nos experts pour une consultation personnalisée."
+  }, {
+    question: "Proposez-vous des services personnalisés ?",
+    answer: "Oui, chaque projet est unique. Nous adaptons nos méthodes de collecte selon vos besoins spécifiques et votre secteur d'activité."
+  }];
   const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    setCurrentTestimonial(prev => (prev + 1) % testimonials.length);
   };
-
   const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentTestimonial(prev => (prev - 1 + testimonials.length) % testimonials.length);
   };
-
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       <Header />
       
       {/* Hero Section */}
@@ -119,10 +78,7 @@ const CollecteDeData = () => {
               Des données locales, authentiques et représentatives pour nourrir vos projets en intelligence artificielle, 
               recherche, éducation et bien plus.
             </p>
-            <Button 
-              size="lg" 
-              className="bg-codjam-orange-500 hover:bg-codjam-orange-600 text-white px-8 py-4 text-lg"
-            >
+            <Button size="lg" className="bg-codjam-orange-500 hover:bg-codjam-orange-600 text-white px-8 py-4 text-lg">
               📩 Discutons de votre projet
             </Button>
             <div className="mt-4">
@@ -366,35 +322,17 @@ const CollecteDeData = () => {
                 </CardContent>
               </Card>
               
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute left-4 top-1/2 transform -translate-y-1/2"
-                onClick={prevTestimonial}
-              >
+              <Button variant="outline" size="icon" className="absolute left-4 top-1/2 transform -translate-y-1/2" onClick={prevTestimonial}>
                 <ChevronLeft className="h-4 w-4" />
               </Button>
               
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute right-4 top-1/2 transform -translate-y-1/2"
-                onClick={nextTestimonial}
-              >
+              <Button variant="outline" size="icon" className="absolute right-4 top-1/2 transform -translate-y-1/2" onClick={nextTestimonial}>
                 <ChevronRight className="h-4 w-4" />
               </Button>
             </div>
             
             <div className="flex justify-center mt-6 space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  className={`w-3 h-3 rounded-full ${
-                    index === currentTestimonial ? 'bg-codjam-teal-500' : 'bg-gray-300'
-                  }`}
-                  onClick={() => setCurrentTestimonial(index)}
-                />
-              ))}
+              {testimonials.map((_, index) => <button key={index} className={`w-3 h-3 rounded-full ${index === currentTestimonial ? 'bg-codjam-teal-500' : 'bg-gray-300'}`} onClick={() => setCurrentTestimonial(index)} />)}
             </div>
           </div>
         </div>
@@ -407,12 +345,7 @@ const CollecteDeData = () => {
             <h2 className="text-3xl lg:text-4xl font-bold text-codjam-navy-500 mb-6">
               🌍 Préserver, Innover, Transformer
             </h2>
-            <p className="text-lg text-codjam-navy-400 leading-relaxed">
-              Au-delà de la collecte, nous contribuons à la préservation du riche patrimoine africain. 
-              Chaque donnée collectée participe à la sauvegarde des langues, traditions, objets culturels 
-              et savoirs ancestraux. Nos datasets ne nourrissent pas seulement vos algorithmes, ils 
-              construisent un pont entre l'héritage africain et l'innovation technologique mondiale.
-            </p>
+            <p className="text-lg text-codjam-navy-400 leading-relaxed">Chez Codjam, nous croyons que la collecte de données peut aussi servir à préserver le patrimoine africain. Langues en voie de disparition, objets traditionnels, expressions culturelles – nous contribuons à leur sauvegarde numérique tout en créant des datasets puissants pour les technologies de demain.</p>
           </div>
         </div>
       </section>
@@ -487,28 +420,17 @@ const CollecteDeData = () => {
           </div>
           
           <div className="max-w-3xl mx-auto space-y-4">
-            {faqItems.map((item, index) => (
-              <Card key={index} className="border-codjam-teal-200">
-                <CardHeader 
-                  className="cursor-pointer"
-                  onClick={() => setShowFAQ(showFAQ === index ? null : index)}
-                >
+            {faqItems.map((item, index) => <Card key={index} className="border-codjam-teal-200">
+                <CardHeader className="cursor-pointer" onClick={() => setShowFAQ(showFAQ === index ? null : index)}>
                   <div className="flex justify-between items-center">
                     <CardTitle className="text-codjam-navy-500 text-lg">{item.question}</CardTitle>
-                    <ChevronRight 
-                      className={`w-5 h-5 text-codjam-teal-500 transition-transform ${
-                        showFAQ === index ? 'rotate-90' : ''
-                      }`} 
-                    />
+                    <ChevronRight className={`w-5 h-5 text-codjam-teal-500 transition-transform ${showFAQ === index ? 'rotate-90' : ''}`} />
                   </div>
                 </CardHeader>
-                {showFAQ === index && (
-                  <CardContent>
+                {showFAQ === index && <CardContent>
                     <p className="text-codjam-navy-400">{item.answer}</p>
-                  </CardContent>
-                )}
-              </Card>
-            ))}
+                  </CardContent>}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -525,17 +447,10 @@ const CollecteDeData = () => {
               Nos experts vous accompagnent de l'analyse des besoins à la livraison finale.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-white text-codjam-orange-500 hover:bg-gray-50 px-8 py-4 text-lg"
-              >
+              <Button size="lg" className="bg-white text-codjam-orange-500 hover:bg-gray-50 px-8 py-4 text-lg">
                 ➡️ Talk to an expert
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg"
-              >
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg">
                 Join our Talent
               </Button>
             </div>
@@ -544,8 +459,6 @@ const CollecteDeData = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default CollecteDeData;
