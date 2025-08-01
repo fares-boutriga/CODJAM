@@ -9,7 +9,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-  space-x-3">
             <img src="/lovable-uploads/81fed320-7eda-419c-a39c-42c56574bd1a.png" alt="CODJAM" className="h-10 w-auto lg:h-12" />
             <span className="text-2xl font-bold text-codjam-navy-500 font-inter">CODJAM</span>
           </Link>
@@ -24,58 +24,49 @@ const Header = () => {
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-72 bg-white border shadow-lg">
-                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger className="text-codjam-navy-600 hover:text-codjam-teal-500">
-                    AI Data Hub
-                  </DropdownMenuSubTrigger>
-                  <DropdownMenuSubContent className="bg-white border shadow-lg">
-                    <DropdownMenuItem asChild>
-                      <Link to="#data-annotation" className="text-codjam-navy-600 hover:text-codjam-teal-500">Data Annotation</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link to="/collecte-de-donnees" className="text-codjam-navy-600 hover:text-codjam-teal-500">Data Collection</Link>
-                    </DropdownMenuItem>
-                  </DropdownMenuSubContent>
-                </DropdownMenuSub>
-                <DropdownMenuItem asChild>
-                  <Link to="#trust-safety" className="text-codjam-navy-600 hover:text-codjam-teal-500">Trust & Safety</Link>
-                </DropdownMenuItem>
-                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger className="text-codjam-navy-600 hover:text-codjam-teal-500">
-                    CX Management
-                  </DropdownMenuSubTrigger>
-                  <DropdownMenuSubContent className="bg-white border shadow-lg">
-                    <DropdownMenuItem asChild>
+              <DropdownMenuContent className="w-96 bg-white border shadow-lg">
+                <div className="grid grid-cols-2 gap-4 p-2">
+                  <div>
+                    <DropdownMenuLabel className="text-codjam-navy-700 px-2">AI Data Hub</DropdownMenuLabel>
+                    <div className="space-y-1">
+                      <DropdownMenuItem asChild>
+                        <Link to="#data-annotation" className="text-codjam-navy-600 hover:text-codjam-teal-500">Data Annotation</Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link to="/collecte-de-donnees" className="text-codjam-navy-600 hover:text-codjam-teal-500">Data Collection</Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuLabel className="text-codjam-navy-700 px-2">CX Management</DropdownMenuLabel>
+
+                      <DropdownMenuItem asChild>
                       <Link to="#user-testing" className="text-codjam-navy-600 hover:text-codjam-teal-500">User Testing</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
                       <Link to="#surveys" className="text-codjam-navy-600 hover:text-codjam-teal-500">Survey</Link>
-                    </DropdownMenuItem>
-                  </DropdownMenuSubContent>
-                </DropdownMenuSub>
-                <DropdownMenuItem asChild>
-                  <Link to="#datasets" className="text-codjam-navy-600 hover:text-codjam-teal-500">Off-the-shelf Datasets</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="#datasets" className="text-codjam-navy-600 hover:text-codjam-teal-500">AI agents</Link>
-                </DropdownMenuItem>
-                                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger className="text-codjam-navy-600 hover:text-codjam-teal-500">
-                    Advanced AI Technologies
-                  </DropdownMenuSubTrigger>
-                  <DropdownMenuSubContent className="bg-white border shadow-lg">
-                    <DropdownMenuItem asChild>
-                      <Link to="#user-testing" className="text-codjam-navy-600 hover:text-codjam-teal-500">LLM & RLHF multillingual AI training and Localization </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
+                      </DropdownMenuItem>
+                    </div>
+                  </div>
+                  <div>
+                    <DropdownMenuLabel className="text-codjam-navy-700 px-2">Advanced AI Technologies</DropdownMenuLabel>
+                    <div className="space-y-1">
+                      <DropdownMenuItem asChild>
+                      <Link to="#user-testing" className="text-codjam-navy-600 hover:text-codjam-teal-500">LLM & RLHF AI training</Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
                       <Link to="#surveys" className="text-codjam-navy-600 hover:text-codjam-teal-500">Generative AI & RLHF</Link>
-                    </DropdownMenuItem>
-                  </DropdownMenuSubContent>
-                </DropdownMenuSub>
+                      </DropdownMenuItem>
+                        <div className="my-4 border-t border-gray-300"></div>
+                      <DropdownMenuItem asChild>
+                  <Link to="#trust-safety" className="text-codjam-navy-600 hover:text-codjam-teal-500"><strong>Trust & Safety </strong></Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                  <Link to="#datasets" className="text-codjam-navy-600 hover:text-codjam-teal-500"><strong>AI agents</strong></Link>
+                      </DropdownMenuItem>un dev
+                      
+                    </div>
+                  </div>
+                </div>
               </DropdownMenuContent>
             </DropdownMenu>
-
             {/* AI Agents - Standalone */}
 
 
