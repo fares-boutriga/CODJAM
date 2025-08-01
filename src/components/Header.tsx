@@ -3,10 +3,9 @@ import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator, DropdownMenuLabel, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger } from '@/components/ui/dropdown-menu';
 import { Menu, X, Search, Globe, ChevronDown, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ThemeToggle } from './ThemeToggle';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  return <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
+  return <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -166,7 +165,6 @@ const Header = () => {
             <Button variant="ghost" size="icon" className="text-codjam-navy-600 hover:text-codjam-teal-500">
               <Globe className="h-5 w-5" />
             </Button>
-            <ThemeToggle />
             <Button variant="ghost" size="icon" className="text-codjam-navy-600 hover:text-codjam-teal-500">
               <User className="h-5 w-5" />
             </Button>
@@ -179,7 +177,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && <div className="lg:hidden border-t border-border bg-background">
+        {isMenuOpen && <div className="lg:hidden border-t border-gray-200 bg-white">
             <nav className="py-4">
               {/* Mobile menu items */}
               <div className="space-y-1">
