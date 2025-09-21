@@ -24,7 +24,7 @@ const Header = () => {
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-96 bg-white border shadow-lg">
+              <DropdownMenuContent className="w-96 bg-white border border-gray-300 shadow-lg">
                 <div className="grid grid-cols-2 gap-4 p-2">
                   <div>
                     <DropdownMenuLabel className="text-codjam-navy-700 px-2">AI Data Hub</DropdownMenuLabel>
@@ -60,7 +60,7 @@ const Header = () => {
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
                   <Link to="#datasets" className="text-codjam-navy-600 hover:text-codjam-teal-500"><strong>AI agents</strong></Link>
-                      </DropdownMenuItem>un dev
+                      </DropdownMenuItem>
                       
                     </div>
                   </div>
@@ -78,7 +78,7 @@ const Header = () => {
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-96 bg-white border shadow-lg">
+              <DropdownMenuContent className="w-96 bg-white border border-gray-300 shadow-lg">
                 <div className="grid grid-cols-2 gap-4 p-2">
                   <div>
                     <DropdownMenuLabel className="text-codjam-navy-700 px-2">Core Concepts</DropdownMenuLabel>
@@ -129,7 +129,7 @@ const Header = () => {
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-48 bg-white border shadow-lg">
+              <DropdownMenuContent className="w-48 bg-white border border-gray-300 shadow-lg">
                 <DropdownMenuItem asChild>
                   <Link to="#about" className="text-codjam-navy-600 hover:text-codjam-teal-500">About Us</Link>
                 </DropdownMenuItem>

@@ -103,6 +103,7 @@ const ServicesSection = () => {
           <Button 
             size="lg"
             className="bg-codjam-gradient text-white px-8 py-3 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            style={{ background: 'linear-gradient(270deg, #14afe0 17%, #17a2b8 100%)' }}
           >
             Demander un Devis
           </Button>

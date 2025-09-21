@@ -322,11 +322,11 @@ const CollecteDeData = () => {
                 </CardContent>
               </Card>
               
-              <Button variant="outline" size="icon" className="absolute left-4 top-1/2 transform -translate-y-1/2" onClick={prevTestimonial}>
+              <Button variant="ghost" size="icon" className="absolute left-4 top-1/2 transform -translate-y-1/2" onClick={prevTestimonial}>
                 <ChevronLeft className="h-4 w-4" />
               </Button>
               
-              <Button variant="outline" size="icon" className="absolute right-4 top-1/2 transform -translate-y-1/2" onClick={nextTestimonial}>
+              <Button variant="ghost" size="icon" className="absolute right-4 top-1/2 transform -translate-y-1/2" onClick={nextTestimonial}>
                 <ChevronRight className="h-4 w-4" />
               </Button>
             </div>
